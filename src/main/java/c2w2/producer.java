@@ -10,10 +10,16 @@ public class producer{
         Properties props = new Properties();
         props.put("metadata.broker.list", "kafka1:9092,kafkat2:9092,kafka3:9092");
         props.put("serializer.class", "kafka.serializer.StringEncoder");
-        ProducerConfig producerConfig = new ProducerConfig(props);
+        ProducerConfig  producerConfig = new ProducerConfig(props);
         Producer<String, String> producer = new Producer<String, String>(producerConfig);
+        
+        for(int i=0; i<10; i++)
+        {
+        
         KeyedMessage<String, String> message = new KeyedMessage<String, String>("c2w2", "WOW");  
         producer.send(message);
+        }
+        
         producer.close();
     }
 }
