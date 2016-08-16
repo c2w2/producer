@@ -16,21 +16,21 @@ public class producer{
         ProducerConfig  producerConfig = new ProducerConfig(props);
         Producer<String, String> producer = new Producer<String, String>(producerConfig);
         String str;
-        for(int i=0; i<147483647; i++)
+        for(int i=0; i<2147483647; i++)
         {
         	if(i%3==0)
         	{
-        		str=Integer.toString(rand.nextInt(9)+1);
+        		str=Integer.toString((int)(Math.sqrt(rand.nextInt(9)+1)));
         		KeyedMessage<String, String> message = new KeyedMessage<String, String>("topic1", str);  
         		producer.send(message);
         	}else if(i%3==1)
         	{
-        		str=Integer.toString(rand.nextInt(9)+1);
+        		str=Integer.toString((int)(Math.sqrt(rand.nextInt(9)+1)));
         		KeyedMessage<String, String> message = new KeyedMessage<String, String>("topic2", str);  
         		producer.send(message);
         	}else if(i%3==2)
         	{
-        		str=Integer.toString(rand.nextInt(9)+1);
+        		str=Integer.toString((int)(Math.sqrt(rand.nextInt(9)+1)));
         		KeyedMessage<String, String> message = new KeyedMessage<String, String>("topic3", str);  
         		producer.send(message);
         	}
