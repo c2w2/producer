@@ -16,7 +16,7 @@ public class producer{
         ProducerConfig  producerConfig = new ProducerConfig(props);
         Producer<String, String> producer = new Producer<String, String>(producerConfig);
         String str;
-        for(int i=0; i<9999; i++)
+        for(int i=0; i<2147483647; i++)
         {
         	if(i%3==0)
         	{
