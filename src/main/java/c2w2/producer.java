@@ -20,17 +20,17 @@ public class producer{
         {
         	if(i%3==0)
         	{
-        		str=Integer.toString((int)(Math.sqrt(rand.nextInt(9)+1)));
+        		str=Integer.toString(rand.nextInt(9)+1);
         		KeyedMessage<String, String> message = new KeyedMessage<String, String>("topic1", str);  
         		producer.send(message);
         	}else if(i%3==1)
         	{
-        		str=Integer.toString((int)(Math.sqrt(rand.nextInt(9)+1)));
+        		str=Integer.toString(rand.nextInt(9)+1);
         		KeyedMessage<String, String> message = new KeyedMessage<String, String>("topic2", str);  
         		producer.send(message);
         	}else if(i%3==2)
         	{
-        		str=Integer.toString((int)(Math.sqrt(rand.nextInt(9)+1)));
+        		str=Integer.toString(rand.nextInt(9)+1);
         		KeyedMessage<String, String> message = new KeyedMessage<String, String>("topic3", str);  
         		producer.send(message);
         	}
